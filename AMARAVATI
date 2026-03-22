@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaravati | Authentic Royal Dining</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for easy theme management */
+        :root {
+            --primary: #d4af37; /* Gold */
+            --dark: #1a1a1a;
+            --light: #f9f9f9;
+            --text: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--text); background-color: #fff; scroll-behavior: smooth; }
+
+        /* Navigation */
+        nav { 
+            background: rgba(26, 26, 26, 0.95); 
+            color: var(--primary); 
+            padding: 1rem 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 2px solid var(--primary);
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: #fff; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        nav ul li a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero { 
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; font-style: italic; margin-bottom: 30px; }
+        .btn { 
+            background: var(--primary); 
+            color: var(--dark); 
+            padding: 15px 35px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            border-radius: 2px;
+            text-transform: uppercase;
+            transition: 0.4s;
+        }
+        .btn:hover { background: #fff; transform: translateY(-3px); }
+
+        /* Sections General */
+        section { padding: 80px 10%; }
+        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 3px; background: var(--primary); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        /* Menu Section */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .menu-category h3 { border-bottom: 2px solid var(--primary); margin-bottom: 20px; padding-bottom: 5px; font-family: 'Playfair Display', serif; }
+        .menu-item { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .item-info h4 { font-weight: 600; }
+        .item-info p { font-size: 0.85rem; color: #666; }
+        .price { color: var(--primary); font-weight: bold; }
+
+        /* Reservation Form */
+        .res-container { background: var(--dark); color: #fff; border-radius: 8px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .res-form input, .res-form select { width: 100%; padding: 12px; margin-bottom: 15px; border: none; border-radius: 4px; }
+        .submit-btn { background: var(--primary); border: none; width: 100%; padding: 15px; font-weight: bold; cursor: pointer; border-radius: 4px; }
+
+        /* Footer */
+        footer { background: var(--dark); color: #888; text-align: center; padding: 50px 0; border-top: 5px solid var(--primary); }
+        .socials { margin-bottom: 20px; }
+        .socials a { color: var(--primary); margin: 0 10px; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .res-container { grid-template-columns: 1fr; }
+            nav ul { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">AMARAVATI</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reserve">Reservations</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <p>Welcome to</p>
+        <h1>AMARAVATI</h1>
+        <p>The Essence of South Indian Culinary Excellence</p>
+        <a href="#reserve" class="btn">Book a Table</a>
+    </section>
+
+    <section id="about" style="text-align: center; background: var(--light);">
+        <h2 class="section-title">Our Heritage</h2>
+        <p style="max-width: 800px; margin: 0 auto;">Named after the historic capital, Amaravati brings the bold spices and royal hospitality of Andhra to your plate. Every dish is a tribute to tradition, prepared with hand-ground spices and the freshest ingredients.</p>
+    </section>
+
+    <section id="menu">
+        <h2 class="section-title">The Grand Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-category">
+                <h3>Appetizers</h3>
+                <div class="menu-item">
+                    <div class="item-info"><h4>Guntur Chilli Chicken</h4><p>Spicy, deep-fried chicken with a kick.</p></div>
+                    <span class="price">₹320</span>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info"><h4>Paneer 65</h4><p>Tempered cottage cheese with curry leaves.</p></div>
+                    <span class="price">₹280</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Signature Biryanis</h3>
+                <div class="menu-item">
+                    <div class="item-info"><h4>Amaravati Special Biryani</h4><p>Slow-cooked with aromatic basmati rice.</p></div>
+                    <span class="price">₹450</span>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info"><h4>Ulavacharu Biryani</h4><p>Traditional horse gram cooked with spices.</p></div>
+                    <span class="price">₹480</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Sweet Endings</h3>
+                <div class="menu-item">
+                    <div class="item-info"><h4>Double Ka Meetha</h4><p>Classic bread pudding with saffron & nuts.</p></div>
+                    <span class="price">₹180</span>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info"><h4>Qubani Ka Meetha</h4><p>Dried apricot compote with ice cream.</p></div>
+                    <span class="price">₹210</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reserve">
+        <div class="res-container">
+            <div>
+                <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; color: var(--primary);">Reserve a Table</h2>
+                <p style="margin-top: 20px;">Join us for an unforgettable dining experience. For groups larger than 10, please call us directly.</p>
+                <p style="margin-top: 20px;"><strong>Hours:</strong><br>Lunch: 12:00 PM - 3:30 PM<br>Dinner: 7:00 PM - 11:00 PM</p>
+            </div>
+            <div class="res-form">
+                <form action="#">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="date" required>
+                    <select>
+                        <option>2 People</option>
+                        <option>4 People</option>
+                        <option>6+ People</option>
+                    </select>
+                    <button type="submit" class="submit-btn">Check Availability</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="socials">
+            <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+        </div>
+        <p>123 Royal Heritage Road, Amaravati Hub</p>
+        <p>&copy; 2026 Amaravati Restaurant. Crafted for Excellence.</p>
+    </footer>
+
+</body>
+</html>
